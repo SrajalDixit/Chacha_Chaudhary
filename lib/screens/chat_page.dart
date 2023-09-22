@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flare_flutter/flare_actor.dart';
+import 'package:flare_flutter/flare_actor.dart';//lol
 import 'package:rive/rive.dart';
 
 class ChatPage extends StatefulWidget {
