@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flare_flutter/flare_actor.dart';//lol
-import 'package:rive/rive.dart';
 
 class ChatPage extends StatefulWidget {
   const ChatPage({Key? key}) : super(key: key);
@@ -10,43 +8,95 @@ class ChatPage extends StatefulWidget {
 }
 
 class _ChatPageState extends State<ChatPage> {
-  late RiveAnimationController _rive_controller;
-
-  @override
-  void initState(){
-    setState(() {
-      _rive_controller = OneShotAnimation('Blink');
-    });
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Row(
-          children: [
-            Expanded(
-              child: Text(
-                'Speaking to Chacha',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-            ),
-            SizedBox(
-              width: 200,
-              height: 200,
-              child: RiveAnimation.asset(
-                'assets/1534-6767-eye-icon.riv',
-                controllers: [_rive_controller],
-                fit: BoxFit.contain,
-                alignment: Alignment.centerRight,
-              ),
-            ),
-          ],
+        title: Text(
+          'Speaking to Chacha Chad',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
+        backgroundColor: Color.fromARGB(255, 48, 228, 183),
+        elevation: 5.0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(15),
+          ),
+        ),
+        leading: Builder(builder: (BuildContext context) {
+          return IconButton(
+            icon: Icon(
+              Icons.menu,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          );
+        }),
       ),
-      
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          SingleChildScrollView(
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    FloatingActionButton(
+                      onPressed: () {},
+                      child: Icon(
+                        Icons.mic_none_rounded,
+                        color: Colors.white,
+                      ),
+                      backgroundColor: Color.fromARGB(255, 48, 228, 183),
+                    ),
+                    SizedBox(width: 8), // Add some spacing
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20.0),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius:
+                                  2, // Spread radius to control shadow size
+                              blurRadius: 5,
+                              offset:
+                                  Offset(0, 3), // Adjust the shadow position
+                            ),
+                          ],
+                        ),
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                              hintText: 'Send a message',
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(20.0),
+                                borderSide: BorderSide.none,
+                              ),
+                              contentPadding: EdgeInsets.symmetric(
+                                vertical: 10,
+                                horizontal: 16,
+                              ),
+                              suffixIcon: IconButton(
+                                onPressed: () {},
+                                icon: Icon(Icons.send),
+                                color: Color.fromARGB(255, 48, 228, 183),
+                              )),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
