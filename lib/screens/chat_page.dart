@@ -51,7 +51,10 @@ class _ChatPageState extends State<ChatPage> {
       body: Column(
         
         children: [
-          Container(
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Container(
   height: 250, width: 250,
   decoration: BoxDecoration(
     image: DecorationImage(
@@ -62,6 +65,8 @@ class _ChatPageState extends State<ChatPage> {
   ),
   child: null, 
 ),
+            ],
+          ),
 
         Expanded(
               child: ListView.builder(
