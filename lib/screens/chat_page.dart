@@ -55,9 +55,10 @@ class _ChatPageState extends State<ChatPage> {
           ),
           Expanded(
               child: ListView.builder(
+              reverse: true,
             itemCount: messages.length,
             itemBuilder: (context, index) {
-              final message = messages[index];
+              final message = messages[messages.length-index-1];
               return ChatBubble(
                 text: message,
                 isUser: true,
