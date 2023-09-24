@@ -52,6 +52,7 @@ class _ChatPageState extends State<ChatPage> {
       body: Column(
         
         children: [
+          SizedBox(height: 25,),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -63,6 +64,7 @@ class _ChatPageState extends State<ChatPage> {
       fit: BoxFit.cover, 
     
     ),
+    
   ),
   child: null, 
 ),
