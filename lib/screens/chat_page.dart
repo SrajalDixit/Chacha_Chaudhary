@@ -49,24 +49,21 @@ class _ChatPageState extends State<ChatPage> {
         }),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
+        
         children: [
           Container(
-  height: 300, 
+  height: 250, width: 250,
   decoration: BoxDecoration(
     image: DecorationImage(
-      image: AssetImage('assets/Untitled design (1).png'),
+      image: AssetImage('assets/Untitled design (1).png',),
       fit: BoxFit.cover, 
+    
     ),
   ),
   child: null, 
 ),
 
-          
-          SizedBox(
-            height: 5,
-          ),
-          Expanded(
+        Expanded(
               child: ListView.builder(
               reverse: true,
             itemCount: messages.length,
@@ -80,11 +77,11 @@ class _ChatPageState extends State<ChatPage> {
           )),
           SingleChildScrollView(
             child: Align(
-              alignment: Alignment.bottomCenter,
+             
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                 
                   children: [
                     FloatingActionButton(
                       onPressed: () {},
@@ -105,7 +102,7 @@ class _ChatPageState extends State<ChatPage> {
                               color: Colors.grey.withOpacity(0.5),
                               spreadRadius: 2,
                               blurRadius: 5,
-                              offset: Offset(0, 3),
+                              offset: Offset(0,2),
                             ),
                           ],
                         ),
