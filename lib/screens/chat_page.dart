@@ -1,3 +1,4 @@
+import 'package:chacha_chaudhary/colors/colors.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/chat_card.dart';
@@ -29,7 +30,7 @@ class _ChatPageState extends State<ChatPage> {
           'Speaking to Chacha AI',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Color.fromARGB(255, 48, 228, 183),
+        backgroundColor: uiColor,
         elevation: 5.0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
@@ -94,7 +95,7 @@ class _ChatPageState extends State<ChatPage> {
                         Icons.mic_none_rounded,
                         color: Colors.white,
                       ),
-                      backgroundColor: Color.fromARGB(255, 48, 228, 183),
+                      backgroundColor: uiColor,
                     ),
                     SizedBox(width: 8),
                     Expanded(
@@ -132,7 +133,7 @@ class _ChatPageState extends State<ChatPage> {
                                   }
                                 },
                                 icon: Icon(Icons.send),
-                                color: Color.fromARGB(255, 48, 228, 183),
+                                color: uiColor,
                               )),
                         ),
                       ),
