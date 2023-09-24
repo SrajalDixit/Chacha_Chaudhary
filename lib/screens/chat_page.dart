@@ -23,9 +23,10 @@ class _ChatPageState extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       appBar: AppBar(
         title: Text(
-          'Speaking to Chacha Chad',
+          'Speaking to Chacha AI',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         backgroundColor: Color.fromARGB(255, 48, 228, 183),
@@ -42,7 +43,7 @@ class _ChatPageState extends State<ChatPage> {
               color: Colors.white,
             ),
             onPressed: () {
-              Scaffold.of(context).openDrawer();
+              
             },
           );
         }),
@@ -50,6 +51,18 @@ class _ChatPageState extends State<ChatPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
+          Container(
+  height: 300, 
+  decoration: BoxDecoration(
+    image: DecorationImage(
+      image: AssetImage('assets/Untitled design (1).png'),
+      fit: BoxFit.cover, 
+    ),
+  ),
+  child: null, 
+),
+
+          
           SizedBox(
             height: 5,
           ),
