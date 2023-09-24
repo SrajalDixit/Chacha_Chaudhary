@@ -1,3 +1,4 @@
+import 'package:chacha_chaudhary/colors/colors.dart';
 import 'package:flutter/material.dart';
 
 class ChatBubble extends StatelessWidget {
@@ -25,12 +26,12 @@ class ChatBubble extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: isUser ? Color.fromARGB(255, 37, 172, 139) : Colors.grey,
+            color: isUser ? chatBoxColor: Colors.grey,
             borderRadius: borderRadius,
           ),
           child: Text(
             text,
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.white,fontSize: 17),
           ),
         ),
       ),

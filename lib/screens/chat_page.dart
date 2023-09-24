@@ -1,3 +1,4 @@
+import 'package:chacha_chaudhary/colors/colors.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/chat_card.dart';
@@ -23,12 +24,13 @@ class _ChatPageState extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       appBar: AppBar(
         title: Text(
-          'Speaking to Chacha Chad',
+          'Speaking to Chacha AI',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Color.fromARGB(255, 48, 228, 183),
+        backgroundColor: uiColor,
         elevation: 5.0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
@@ -42,18 +44,32 @@ class _ChatPageState extends State<ChatPage> {
               color: Colors.white,
             ),
             onPressed: () {
-              Scaffold.of(context).openDrawer();
+              
             },
           );
         }),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
+        
         children: [
-          SizedBox(
-            height: 5,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Container(
+  height: 225, width: 225,
+  decoration: BoxDecoration(
+    image: DecorationImage(
+      image: AssetImage('assets/Untitled design (2) (1)_prev_ui.png',),
+      fit: BoxFit.cover, 
+    
+    ),
+  ),
+  child: null, 
+),
+            ],
           ),
-          Expanded(
+
+        Expanded(
               child: ListView.builder(
               reverse: true,
             itemCount: messages.length,
@@ -67,11 +83,11 @@ class _ChatPageState extends State<ChatPage> {
           )),
           SingleChildScrollView(
             child: Align(
-              alignment: Alignment.bottomCenter,
+             
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                 
                   children: [
                     FloatingActionButton(
                       onPressed: () {},
@@ -79,7 +95,7 @@ class _ChatPageState extends State<ChatPage> {
                         Icons.mic_none_rounded,
                         color: Colors.white,
                       ),
-                      backgroundColor: Color.fromARGB(255, 48, 228, 183),
+                      backgroundColor: uiColor,
                     ),
                     SizedBox(width: 8),
                     Expanded(
@@ -92,7 +108,7 @@ class _ChatPageState extends State<ChatPage> {
                               color: Colors.grey.withOpacity(0.5),
                               spreadRadius: 2,
                               blurRadius: 5,
-                              offset: Offset(0, 3),
+                              offset: Offset(0,2),
                             ),
                           ],
                         ),
@@ -117,7 +133,7 @@ class _ChatPageState extends State<ChatPage> {
                                   }
                                 },
                                 icon: Icon(Icons.send),
-                                color: Color.fromARGB(255, 48, 228, 183),
+                                color: uiColor,
                               )),
                         ),
                       ),
