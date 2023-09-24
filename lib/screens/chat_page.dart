@@ -56,10 +56,10 @@ class _ChatPageState extends State<ChatPage> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
-  height: 250, width: 250,
+  height: 225, width: 225,
   decoration: BoxDecoration(
     image: DecorationImage(
-      image: AssetImage('assets/Untitled design (1).png',),
+      image: AssetImage('assets/Untitled design (2) (1)_prev_ui.png',),
       fit: BoxFit.cover, 
     
     ),
