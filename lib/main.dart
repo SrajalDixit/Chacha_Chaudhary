@@ -12,7 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      
+      title: 'Chacha Chaudhary Chat-bot',
       theme: ThemeData(
        fontFamily: 'Panton',
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

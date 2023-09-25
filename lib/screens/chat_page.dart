@@ -1,4 +1,5 @@
 import 'package:chacha_chaudhary/colors/colors.dart';
+import 'package:chacha_chaudhary/widgets/imageShadow.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/chat_card.dart';
@@ -13,6 +14,7 @@ class ChatPage extends StatefulWidget {
 class _ChatPageState extends State<ChatPage> {
   final TextEditingController _textController = TextEditingController();
   List<String> messages = [];
+  bool isChat = false;
 
   void _addMessage(String message) {
     setState(() {
@@ -72,17 +74,43 @@ class _ChatPageState extends State<ChatPage> {
           ),
 
         Expanded(
-              child: ListView.builder(
-              reverse: true,
-            itemCount: messages.length,
-            itemBuilder: (context, index) {
-              final message = messages[messages.length-index-1];
-              return ChatBubble(
-                text: message,
-                isUser: true,
-              );
-            },
-          )),
+              child: Container(margin: EdgeInsets.only(left: 10, right: 10),
+              
+              decoration: BoxDecoration(
+                color: Colors.grey.withOpacity(0.3),
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  // BoxShadow(
+                  //   color: Colors.grey.withOpacity(0.5),
+                  //   spreadRadius: 0,
+                  //   //blurRadius: 5,
+                  //   offset: Offset(-7,-5),
+                  // ),
+                ],
+              ),
+                child: Stack(children:  [
+                  Container
+                  (
+
+                    child: ListView.builder(
+                reverse: true,
+                          itemCount: messages.length,
+                          itemBuilder: (context, index) {
+                final message = messages[messages.length-index-1];
+                
+                return ChatBubble(
+                  text: message,
+                  isUser: true,
+                );
+                          },
+                        ),
+                        ),
+                        ChatShadow()
+                        ]
+                        )
+              )
+          ),
+          
           SingleChildScrollView(
             child: Align(
              
