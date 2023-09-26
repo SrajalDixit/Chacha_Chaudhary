@@ -62,11 +62,13 @@ class _ChatPageState extends State<ChatPage> {
             children: [
               Stack(children: [
                 Container(
-  height: 225, width: 425,
+  height: 225, width: 400,
   decoration: BoxDecoration(
     image: DecorationImage(
       alignment: Alignment.topLeft,
-      image: AssetImage('assets/Untitled design (2) (1)_prev_ui.png',),
+      image: AssetImage('assets/Untitled design (2) (1)_prev_ui.png',
+      
+      ),
       //fit: BoxFit.cover, 
     
     ),
