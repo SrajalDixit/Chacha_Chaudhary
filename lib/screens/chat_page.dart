@@ -1,11 +1,13 @@
 import 'package:chacha_chaudhary/colors/colors.dart';
+import 'package:chacha_chaudhary/widgets/chat_bubble.dart';
 import 'package:chacha_chaudhary/widgets/imageShadow.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/chat_card.dart';
 
 class ChatPage extends StatefulWidget {
-  const ChatPage({Key? key}) : super(key: key);
+  //final String response;
+  const ChatPage({Key? key ,}) : super(key: key);
 
   @override
   State<ChatPage> createState() => _ChatPageState();
@@ -15,7 +17,7 @@ class _ChatPageState extends State<ChatPage> {
   final TextEditingController _textController = TextEditingController();
   List<String> messages = [];
   bool isChat = false;
-
+  
   void _addMessage(String message) {
     setState(() {
       messages.add(message);
@@ -58,18 +60,32 @@ class _ChatPageState extends State<ChatPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Container(
-  height: 225, width: 225,
+              Stack(children: [
+                Container(
+  height: 225, width: 425,
   decoration: BoxDecoration(
     image: DecorationImage(
+      alignment: Alignment.topLeft,
       image: AssetImage('assets/Untitled design (2) (1)_prev_ui.png',),
-      fit: BoxFit.cover, 
+      //fit: BoxFit.cover, 
     
     ),
     
   ),
-  child: null, 
+  child: null
 ),
+Positioned(right: -55, bottom: -15,
+  child: Image.asset('assets/ccb.png', height: 250, width: 350,),
+  
+  ),
+  Positioned(right: 10, bottom: 65,
+  child: Container( height: 150, width: 200, padding: EdgeInsets.all(20), 
+  child: SingleChildScrollView(
+    child: Text('',style: TextStyle(fontFamily: 'Comic-Neue', fontWeight: FontWeight.w900), softWrap: true,)),),
+  
+  )
+]
+)
             ],
           ),
 
